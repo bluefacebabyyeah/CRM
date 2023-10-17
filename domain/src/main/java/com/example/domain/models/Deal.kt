@@ -2,9 +2,9 @@ package com.example.domain.models
 
 data class Deal (
     val category : Category,
-    val nameDeal : String,
-    val priceDeal : Double,
-    val descriptionDeal : String
+    val name : String,
+    val price : Double,
+    val description : String
     ) {
-    val dateDeal : Long = System.currentTimeMillis()
+    val date : Long = System.currentTimeMillis()
 }
