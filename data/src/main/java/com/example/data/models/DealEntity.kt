@@ -1,19 +1,20 @@
 package com.example.data.models
 
 import androidx.room.Entity
-import com.example.domain.models.Category
+import androidx.room.PrimaryKey
 import com.example.domain.models.Deal
 
 @Entity
 data class DealEntity(
-    val category : Category,
+    val categoryId : Long,
     val name : String,
     val price : Double,
-    val description : String
+    val description : String,
+    @PrimaryKey(autoGenerate = true) val id:Int = 0
 ) {
     fun toDomainModel() =
         Deal(
-            category = category,
+            categoryId = categoryId,
             name = name,
             price = price,
             description = description
